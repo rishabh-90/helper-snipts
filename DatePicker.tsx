@@ -30,6 +30,18 @@ export default function CustomDatePicker() {
               disableUnderline: true, // Removes underline
             },
             fullWidth: true,
+            sx: {
+              "& .MuiInput-underline:before": {
+                borderBottom: "none", // Removes default underline
+              },
+              "& .MuiInput-underline:after": {
+                borderBottom: "none", // Removes focus underline
+              },
+              "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+                borderBottom: "none", // Removes hover underline
+              },
+            },
+          },
           },
         }}
       />
