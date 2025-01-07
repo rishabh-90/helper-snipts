@@ -15,25 +15,23 @@ export default function CustomDatePicker() {
         label="Select Date"
         value={selectedDate}
         onChange={(newValue) => setSelectedDate(newValue)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            variant="standard" // Removes borders
-            InputLabelProps={{
+        slotProps={{
+          textField: {
+            variant: "standard", // Removes borders
+            InputLabelProps: {
               shrink: true, // Ensures the label stays on top
-            }}
-            InputProps={{
-              ...params.InputProps,
+            },
+            InputProps: {
               startAdornment: (
                 <InputAdornment position="start">
                   <CalendarTodayIcon />
                 </InputAdornment>
               ),
               disableUnderline: true, // Removes underline
-            }}
-            fullWidth
-          />
-        )}
+            },
+            fullWidth: true,
+          },
+        }}
       />
     </LocalizationProvider>
   );
